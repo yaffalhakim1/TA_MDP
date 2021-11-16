@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tugas_akhir_mdp/models/maps_detail_model.dart';
 
 // ignore: must_be_immutable
 class DetailPageMaps extends StatefulWidget {
@@ -201,32 +202,6 @@ class _DetailPageMapsState extends State<DetailPageMaps> {
           },
         )),
       ),
-    );
-  }
-}
-
-class MapsDetail {
-  final String uuid;
-  final String displayName;
-  final String coordinates;
-  final String splash;
-  final String displayIcon;
-
-  MapsDetail({
-    this.coordinates,
-    this.displayName,
-    this.splash,
-    this.uuid,
-    this.displayIcon,
-  });
-
-  factory MapsDetail.fromJson(Map<String, dynamic> json) {
-    return MapsDetail(
-      uuid: json['uuid'],
-      displayName: json['displayName'],
-      coordinates: json["coordinates"],
-      splash: json['splash'],
-      displayIcon: json['displayIcon'],
     );
   }
 }
