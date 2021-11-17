@@ -1,7 +1,10 @@
 import 'dart:io';
 
+import 'package:floating_navbar/floating_navbar.dart';
+import 'package:floating_navbar/floating_navbar_item.dart';
 import 'package:flutter/material.dart';
-import 'package:tugas_akhir_mdp/screens/splash.dart';
+import 'package:tugas_akhir_mdp/screens/home.dart';
+import 'package:tugas_akhir_mdp/screens/maps.dart';
 
 class MyHttpOverrides extends HttpOverrides {
   @override
@@ -21,9 +24,28 @@ class AnimeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Anime app',
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: FloatingNavBar(
+        cardWidth: 30,
+        items: [
+          FloatingNavBarItem(
+            iconData: Icons.home,
+            page: Home(),
+            title: 'Home',
+          ),
+          FloatingNavBarItem(
+            iconData: Icons.map,
+            title: 'Maps',
+            page: MapsView(),
+          ),
+        ],
+        color: Color(0xff0F1923),
+        selectedIconColor: Colors.white,
+        unselectedIconColor: Colors.white.withOpacity(0.6),
+        horizontalPadding: 10.0,
+        hapticFeedback: true,
+        showTitle: false,
+      ),
     );
   }
 }

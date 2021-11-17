@@ -122,7 +122,7 @@ class _HomeState extends State<Home> {
                         ),
                       );
                     }
-                    return CircularProgressIndicator();
+                    return Center(child: CircularProgressIndicator());
                   },
                 ),
               ),

@@ -93,38 +93,6 @@ class _DetailPageMapsState extends State<DetailPageMaps> {
                                 overflow: TextOverflow.fade,
                                 maxLines: 2,
                               ),
-                              // Row(
-                              //   children: [
-                              //     Text(
-                              //       snapshot.data.episodes.toString() +
-                              //           ' episodes',
-                              //       style: GoogleFonts.poppins(
-                              //           fontWeight: FontWeight.w400,
-                              //           color: Colors.grey,
-                              //           letterSpacing: 0.2),
-                              //       maxLines: 1,
-                              //     ),
-                              //     SizedBox(
-                              //       width: 5,
-                              //     ),
-                              //     Text(
-                              //       '•',
-                              //       style: TextStyle(
-                              //           color: Colors.white, fontSize: 18),
-                              //     ),
-                              //     SizedBox(
-                              //       width: 5,
-                              //     ),
-                              //     Text(
-                              //       snapshot.data.broadcast,
-                              //       style: GoogleFonts.poppins(
-                              //           fontWeight: FontWeight.w400,
-                              //           color: Colors.grey,
-                              //           letterSpacing: 0.2),
-                              //       maxLines: 1,
-                              //     ),
-                              //   ],
-                              // ),
                             ],
                           ),
                           Spacer(),
@@ -154,18 +122,7 @@ class _DetailPageMapsState extends State<DetailPageMaps> {
                     SizedBox(
                       height: 20,
                     ),
-                    // Padding(
-                    //   padding: const EdgeInsets.symmetric(horizontal: 20),
-                    //   child: Text(
-                    //     'Synopsis',
-                    //     style: GoogleFonts.poppins(
-                    //       textStyle: TextStyle(
-                    //           color: Colors.white,
-                    //           letterSpacing: .5,
-                    //           fontSize: 15),
-                    //     ),
-                    //   ),
-                    // ),
+
                     SizedBox(
                       height: 10,
                     ),
@@ -177,20 +134,6 @@ class _DetailPageMapsState extends State<DetailPageMaps> {
                           topRight: Radius.circular(30),
                         ),
                       ),
-                      // child: Padding(
-                      //   padding: const EdgeInsets.symmetric(
-                      //       horizontal: 20, vertical: 10),
-                      //   child: Text(
-                      //     snapshot.data.synopsis,
-                      //     textAlign: TextAlign.justify,
-                      //     style: GoogleFonts.poppins(
-                      //       textStyle: TextStyle(
-                      //         color: Colors.black87,
-                      //         letterSpacing: .5,
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
                     ),
                   ],
                 ),
