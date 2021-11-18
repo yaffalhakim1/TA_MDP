@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:tugas_akhir_mdp/models/maps_models.dart';
 import 'package:tugas_akhir_mdp/screens/detail_maps.dart';
 import 'package:http/http.dart' as http;
+import 'package:tugas_akhir_mdp/theme.dart';
 
 class MapsView extends StatefulWidget {
   const MapsView({Key key}) : super(key: key);
@@ -81,7 +82,7 @@ class _MapsViewState extends State<MapsView> {
                             height: 180,
                             width: 300,
                             decoration: BoxDecoration(
-                                color: Color(0xff252836),
+                                color: gridColor,
                                 borderRadius: BorderRadius.circular(12)),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,

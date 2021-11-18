@@ -84,6 +84,7 @@ class _HomeState extends State<Home> {
                               horizontal: 20.0,
                             ),
                             leading: CircleAvatar(
+                              backgroundColor: Colors.redAccent,
                               radius: 20,
                               backgroundImage: NetworkImage(
                                 snapshot.data[index].displayIcon,

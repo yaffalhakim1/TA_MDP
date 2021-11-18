@@ -3,7 +3,6 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tugas_akhir_mdp/models/agent_detail_models.dart';
-import 'package:tugas_akhir_mdp/theme.dart';
 
 // ignore: must_be_immutable
 class DetailPage extends StatefulWidget {
@@ -47,195 +46,196 @@ class _DetailPageMapsState extends State<DetailPage> {
       ),
       body: SingleChildScrollView(
         child: Center(
-            child: FutureBuilder<AgentDetail>(
-          future: agentDetail,
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              return Center(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: 10,
-                    ),
-                    //gambar gede
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Color(0xff13212E),
+          child: FutureBuilder<AgentDetail>(
+            future: agentDetail,
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return Center(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height: 10,
                       ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.only(left: 20),
-                                child: Text(
-                                  snapshot.data.displayName.toUpperCase(),
-                                  style: GoogleFonts.poppins(
-                                    textStyle: TextStyle(
-                                      color: Colors.white,
-                                      letterSpacing: 1.5,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 30,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 20),
-                                child: Text(
-                                  snapshot.data.role.displayName,
-                                  style: GoogleFonts.poppins(
-                                    textStyle: TextStyle(
-                                      color: Colors.white,
-                                      letterSpacing: 1.5,
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 16,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Container(
-                            width: 190,
-                            height: 230,
-                            child: Image.network(snapshot.data.fullPortrait),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 10),
-
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        'DESCRIPTION',
-                        style: GoogleFonts.poppins(
-                          textStyle: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: .5,
-                              fontSize: 15),
+                      //gambar gede
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Color(0xff13212E),
                         ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 2,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        snapshot.data.description,
-                        textAlign: TextAlign.justify,
-                        style: GoogleFonts.poppins(
-                          textStyle: TextStyle(
-                            fontSize: 12,
-                            color: Colors.white54,
-                            letterSpacing: .5,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Text(
-                        'ABILITIES',
-                        style: GoogleFonts.poppins(
-                          textStyle: TextStyle(
-                            color: Colors.white,
-                            letterSpacing: .5,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 2,
-                    ),
-                    Container(
-                      height: 400,
-                      child: ListView.builder(
-                        itemCount: snapshot.data.abilities.length,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 10),
-                              child: Container(
-                                padding: EdgeInsets.symmetric(horizontal: 10),
-                                decoration: BoxDecoration(
-                                  color: Color(0xff13212E),
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                                child: Column(
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Container(
-                                          margin: EdgeInsets.only(top: 10),
-                                          width: 40,
-                                          height: 40,
-                                          child: Image.network(snapshot.data
-                                              .abilities[index].displayIcon),
-                                        ),
-                                        SizedBox(
-                                          width: 10,
-                                        ),
-                                        Text(
-                                          snapshot.data.abilities[index]
-                                              .displayName,
-                                          style: GoogleFonts.poppins(
-                                            textStyle: TextStyle(
-                                              color: Colors.white,
-                                              letterSpacing: .5,
-                                              fontWeight: FontWeight.w600,
-                                              fontSize: 18,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                    Text(
-                                      snapshot
-                                          .data.abilities[index].description,
-                                      textAlign: TextAlign.justify,
-                                      style: GoogleFonts.poppins(
-                                        textStyle: TextStyle(
-                                          fontSize: 12,
-                                          color: Colors.white54,
-                                          letterSpacing: .5,
-                                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.only(left: 20),
+                                  child: Text(
+                                    snapshot.data.displayName.toUpperCase(),
+                                    style: GoogleFonts.poppins(
+                                      textStyle: TextStyle(
+                                        color: Colors.white,
+                                        letterSpacing: 1.5,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 30,
                                       ),
                                     ),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                  ],
+                                  ),
                                 ),
-                              ));
-                        },
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 20),
+                                  child: Text(
+                                    snapshot.data.role.displayName,
+                                    style: GoogleFonts.poppins(
+                                      textStyle: TextStyle(
+                                        color: Colors.white,
+                                        letterSpacing: 1.5,
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Container(
+                              width: 190,
+                              height: 230,
+                              child: Image.network(snapshot.data.fullPortrait),
+                            ),
+                          ],
+                        ),
                       ),
-                    )
-                  ],
-                ),
-              );
-            } else if (snapshot.hasError) {
-              return const Center(
-                child: Text('Gagal menampilkan data detail'),
-              );
-            }
-            return const CircularProgressIndicator();
-          },
-        )),
+                      SizedBox(height: 10),
+
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Text(
+                          'DESCRIPTION',
+                          style: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: .5,
+                                fontSize: 15),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 2,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Text(
+                          snapshot.data.description,
+                          textAlign: TextAlign.justify,
+                          style: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                              fontSize: 12,
+                              color: Colors.white54,
+                              letterSpacing: .5,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Text(
+                          'ABILITIES',
+                          style: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                              color: Colors.white,
+                              letterSpacing: .5,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 2,
+                      ),
+                      Container(
+                        height: 400,
+                        child: ListView.builder(
+                          itemCount: snapshot.data.abilities.length,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 10),
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(horizontal: 10),
+                                  decoration: BoxDecoration(
+                                    color: Color(0xff13212E),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                            margin: EdgeInsets.only(top: 10),
+                                            width: 40,
+                                            height: 40,
+                                            child: Image.network(snapshot.data
+                                                .abilities[index].displayIcon),
+                                          ),
+                                          SizedBox(
+                                            width: 10,
+                                          ),
+                                          Text(
+                                            snapshot.data.abilities[index]
+                                                .displayName,
+                                            style: GoogleFonts.poppins(
+                                              textStyle: TextStyle(
+                                                color: Colors.white,
+                                                letterSpacing: .5,
+                                                fontWeight: FontWeight.w600,
+                                                fontSize: 18,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text(
+                                        snapshot
+                                            .data.abilities[index].description,
+                                        textAlign: TextAlign.justify,
+                                        style: GoogleFonts.poppins(
+                                          textStyle: TextStyle(
+                                            fontSize: 12,
+                                            color: Colors.white54,
+                                            letterSpacing: .5,
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                    ],
+                                  ),
+                                ));
+                          },
+                        ),
+                      )
+                    ],
+                  ),
+                );
+              } else if (snapshot.hasError) {
+                return const Center(
+                  child: Text('Gagal menampilkan data detail'),
+                );
+              }
+              return const CircularProgressIndicator();
+            },
+          ),
+        ),
       ),
     );
   }

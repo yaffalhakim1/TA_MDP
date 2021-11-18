@@ -5,6 +5,7 @@ import 'package:floating_navbar/floating_navbar_item.dart';
 import 'package:flutter/material.dart';
 import 'package:tugas_akhir_mdp/screens/home.dart';
 import 'package:tugas_akhir_mdp/screens/maps.dart';
+import 'package:tugas_akhir_mdp/screens/profile.dart';
 
 class MyHttpOverrides extends HttpOverrides {
   @override
@@ -17,10 +18,10 @@ class MyHttpOverrides extends HttpOverrides {
 
 void main() async {
   HttpOverrides.global = new MyHttpOverrides();
-  runApp(AnimeApp());
+  runApp(Laborant());
 }
 
-class AnimeApp extends StatelessWidget {
+class Laborant extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -37,6 +38,11 @@ class AnimeApp extends StatelessWidget {
             iconData: Icons.map,
             title: 'Maps',
             page: MapsView(),
+          ),
+          FloatingNavBarItem(
+            iconData: Icons.person_rounded,
+            title: 'Maps',
+            page: Profile(),
           ),
         ],
         color: Color(0xff0F1923),

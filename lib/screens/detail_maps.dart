@@ -61,9 +61,9 @@ class _DetailPageMapsState extends State<DetailPageMaps> {
                     Container(
                       height: 350,
                       width: MediaQuery.of(context).size.width,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
-                        child: Image.network(snapshot.data.splash),
+                      child: Image.network(
+                        snapshot.data.splash,
+                        fit: BoxFit.cover,
                       ),
                     ),
                     SizedBox(height: 10),
@@ -100,7 +100,7 @@ class _DetailPageMapsState extends State<DetailPageMaps> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Score',
+                                'Coordinates',
                                 style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.w400,
                                     color: Colors.grey,
