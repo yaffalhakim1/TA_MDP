@@ -1,3 +1,3 @@
-# Tugas Akhir Praktikum Modul Device Programmming
+# valorant Details
 
-all done!!
+app contains information about agents and maps, simple apps 
